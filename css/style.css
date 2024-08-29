@@ -769,12 +769,13 @@ h1, h2, h3, h4, h5,
 }
 
 #story .image-container {
-    text-align: center; /* Center the caption under the image */
+    text-align: center;
+    max-width: 500px;
 }
 
 #story .story-image {
-    max-width: 50%; /* Ensure the image is responsive */
     height: auto;
+    width: 250px;
 }
 
 #story .caption {
@@ -782,6 +783,23 @@ h1, h2, h3, h4, h5,
     font-size: 14px; /* Adjust the font size as needed */
     color: #666; /* Adjust the color as needed */
 }
+
+@media (max-width: 991.98px) {
+  #story .row {
+    margin-top: 100px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #terms-section {
+    margin-top: 100px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 
 .image-credit-bottom {
   position: absolute;
@@ -808,6 +826,7 @@ h1, h2, h3, h4, h5,
   background-repeat: no-repeat;
   background-position: center center; 
   background-attachment: fixed;
+  background-image: url("../images/pic6.jpg");
 }
   .site-section-cover,
   .site-section-cover .container {
@@ -833,7 +852,7 @@ h1, h2, h3, h4, h5,
     min-height: auto;
     padding: 2em 0; }
   .site-section-cover.img-bg-section {
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat; 
   }
   .site-section-cover h1 {
@@ -844,10 +863,10 @@ h1, h2, h3, h4, h5,
       .site-section-cover h1 {
         font-size: 2rem; 
       } 
-      /* .site-section-cover {
-        background-image: none;
-        background-color: white;
-      } */
+      .site-section-cover {
+        background-size: cover; /* or contain */
+        background-attachment: scroll;
+      }
     }
   .site-section-cover p {
     font-size: 18px;
@@ -1376,7 +1395,7 @@ h1, h2, h3, h4, h5,
 .post-entry-1 .post-entry-1-contents {
   background: #fff;
   padding: 20px; 
-  min-height: 550px;
+  min-height: 650px;
 }
 
   .post-entry-1 .post-entry-1-contents p {
@@ -1581,8 +1600,15 @@ h1, h2, h3, h4, h5,
     right: 0;
     bottom: 0;
     content: "";
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5); 
+  
+  }
 
+  @media (max-width: 768px) {
+    .section-3 {
+      background-attachment: scroll;
+    }
+  }
 .testimonial-2 {
   background: #fff;
   padding: 30px;
